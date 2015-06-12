@@ -131,13 +131,13 @@ impl ReadDirectoryChangesServer {
     }
 
     fn remove_watch(&mut self, path: &Path) {
-        if let Some(handle) = self.watches.remove(path) {
-            unsafe {
-                // TODO Handle errors?
-                kernel32::CancelIo(handle);
-                kernel32::CloseHandle(handle);
-            }
-        }
+        // if let Some(handle) = self.watches.remove(path) {
+        //     unsafe {
+        //         // TODO Handle errors?
+        //         kernel32::CancelIo(handle);
+        //         kernel32::CloseHandle(handle);
+        //     }
+        // }
     }
 }
 
