@@ -6,13 +6,14 @@ environment:
   #- TARGET: x86_64-pc-windows-gnu
   #- TARGET: i686-pc-windows-gnu
 install:
+  - check.bat
   - ps: Start-FileDownload "https://static.rust-lang.org/dist/rust-nightly-${env:TARGET}.exe"
   - rust-nightly-%TARGET%.exe /VERYSILENT /NORESTART /DIR="C:\Program Files (x86)\Rust"
   - SET PATH=%PATH%;C:\Program Files (x86)\Rust\bin
   - SET PATH=%PATH%;C:\MinGW\bin
   - rustc -V
   - cargo -V
-  - 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\cl'
+
 
 build: false
 
