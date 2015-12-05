@@ -12,6 +12,7 @@ install:
   - SET PATH=%PATH%;C:\MinGW\bin
   - rustc -V
   - cargo -V
+  - cl
 
 build: false
 
